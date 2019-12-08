@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="script.js"></script>
+
+    <title>Javascript Quiz</title>
+  </head>
+  <body>
+<div class="container-fluid bg-gray">
+  <div class="container">
+      <header>
+          <h1 class="text-center"></h1> 
+        </header>
+
+<style>
+.btn {
+    background-color: blueviolet;
+    outline: none;
+    color: white;
+}
+.btn:hover {
+    opacity: 75%;
+    outline: none;
+}
+
+.btn.correct {
+    color: blue;
+}
+
+.btn.wrong {
+    color: red;
+}
+
+.start-btn {
+font-size: 2em;
+padding: 5px;
+outline: none;
+}
+
+.hide{
+    display: none;
+}
+
+</style>
+
+  <div class="row">
+  <div class="col-12">
+        <div id="highscores" class="float-left">View Highscores</div>
+        <div id="seconds-left" class="float-right">0</div>
+      <div class="container bg-white my-4 py-2 clearfix col-sm-12 col-md-8">
+           
+        <div id="question-container" class="">
+            <div id="question">Question</div>
+            <div id="answer-button" class="btn-grid">
+                <button type="button" class="btn btn-lg my-1">Answer 1</button><br>
+                <button type="button" class="btn btn-lg my-1">Answer 2</button><br>
+                <button type="button" class="btn btn-lg my-1">Answer 3</button><br>
+                <button type="button" class="btn btn-lg my-1">Answer 4</button><br>
+            </div>
+                <div class="controls">
+                    <button type="start-button" class="start-btn  btn btn-lg my-1">Start</button>
+                </div>
+        </div>
+       
+        
+
+
+
+      </div><!-- container white -->
+  </div><!--col-->
+</div><!--row-->
+</div><!--container light-->
+</div>
+
+
+
+  </body>
+</html>

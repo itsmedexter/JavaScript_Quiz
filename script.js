@@ -2,7 +2,9 @@
 
 // 2. When start button is depressed, name and information of quiz dissapears. Question with answers appear in button form ready for user to pick while the timer starts. Answering quickly with corect answer results in high score. Incorrect answer results in 15 second deducted from time remaing. Create a depressed startButton click event with a  function of showQuestions that hides the start button and quiz information, question and answers appear. Then timer starts counting down from 60 seconds.
 
-// 3. User reads question, then picks answer, resulting in picking an answer. Correct answer results in flashing "Correct!" underneat answers and then moving on to new question. Create a "For" loop with "If/else" statements that picks questions, choices, answer from an array. With Users choice, under neath answer a div with content of text "Correct!" or "Wrong!" appear in what ever choice user picks. If "Correct!", user moves on completing the "If/else" statement and timer continuing. If "Wrong!", 15 second deduction In "else" statement from timer.
+// 3. User reads question, then picks answer, resulting in picking an answer. Correct answer results in flashing "Correct!" underneat answers and then moving on to new question. Create a "For" loop with "If/else" statements that picks questions, choices, answer from an array. With Users choice, under neath answer a div with content of text "Correct!" or "Wrong!" appear in what ever choice user picks. If "Correct!", user moves on completing the "If/else" statement and timer continuing. If "Wrong!", 15 second deduction In "else" statement from timer. Then loop stops and goes to new question.
+
+// 4. Then you reach page that tallys your score and you are able to enter your intials that are placed in "localStorage" and saves information untill browser is closed and information is purged from memory.
 
 
 

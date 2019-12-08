@@ -1,3 +1,13 @@
+// 1. When on landing page, name and information of quiz appears with a button to start, view highscores, and timer set at 0. Create question variable array with nested arrays of title, choices, answer. Total of five questions with arrays. Create an onclick add eventListener with start button that begins quiz, starts timer in a function of startGame.
+
+// 2. When start button is depressed, name and information of quiz dissapears. Question with answers appear in button form ready for user to pick while the timer starts. Answering quickly with corect answer results in high score. Incorrect answer results in 15 second deducted from time remaing. Create a depressed startButton click event with a  function of showQuestions that hides the start button and quiz information, question and answers appear. Then timer starts counting down from 60 seconds.
+
+// 3. User reads question, then picks answer, resulting in picking an answer. Correct answer results in flashing "Correct!" underneat answers and then moving on to new question. Create a "For" loop with "If/else" statements that picks questions, choices, answer from an array. With Users choice, under neath answer a div with content of text "Correct!" or "Wrong!" appear in what ever choice user picks. If "Correct!", user moves on completing the "If/else" statement and timer continuing. If "Wrong!", 15 second deduction In "else" statement from timer.
+
+
+
+
+
 /* copied javascript
 no jquery
 

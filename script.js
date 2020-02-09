@@ -1,3 +1,143 @@
+var currentQuestionIndex = 0;
+var time = questions.length * 15;
+var timerId;
+
+var questionsElem = document.getElementById("questions");
+var timerT = document.getElementById("time");
+var theChoices = document.getElementById("choices");
+var submitButton = document.getElementById("submit");
+var startButton = document.getElementById("start");
+var yourInitials = document.getElementById("initials");
+var feedbackEl = document.getElementById("feedback");
+
+
+
+function startQuiz() {
+  var startScreenEl = document.getElementById("start-screen");
+  startScreenEl.setAttribute("class","hide");
+  questionsElem.removeAttribute("class");
+  timerId = setInterval(clockTick, 1000);
+  timerT.textContent = time;
+
+  getQuestion();
+}
+
+function getQuestion() {
+  // get current question object from array
+  var currentQuestion = questions[currentQuestionIndex];
+
+  var titleEl = document.getElementById("question-title");
+  titleEl.textContent = currentQuestion.title;
+  theChoices.innerHTML = "";
+
+  currentQuestion.choices.forEach(function(choice, i) {
+    var choiceNode = document.createElement("button");
+    choiceNode.setAttribute("class", "choice");
+    choiceNode.setAttribute("value",choice);
+    choiceNode.textContent = i + 1 + ". " + choice;
+    choiceNode.onclick = questionClick;
+    theChoices.appendChild(choiceNode);
+  });
+}
+
+function questionClick() {
+  if (this.value !== questions[currentQuestionIndex].answer) {
+    time -= 15;
+    if (time < 0) {
+      time = 0;
+    }
+
+    timerT.textContent = time;
+    feedbackEl.textContent = "EEEE thats WRONG!";
+  } else {
+    feedbackEl.textContent = "That's RIGHT!";
+  }
+
+  feedbackEl.setAttribute("class","feedback");
+  setTimeout(function() {
+    feedbackEl.setAttribute("class", "feedback hide");
+  }, 1000);
+  currentQuestionIndex++;
+  if (currentQuestionIndex === questions.length) {
+    quizEnd();
+  } else {
+    getQuestion();
+  }
+}
+
+function quizEnd() {
+  clearInterval(timerId);
+
+  var endScreenEl = document.getElementById("end-screen");
+  endScreenEl.removeAttribute("class");
+
+  var finalScoreEl = document.getElementById("final-score");
+  finalScoreEl.textContent = time;
+  questionsEl.setAttribute("class","hide");
+}
+
+function clockTick() {
+  time--;
+  timerT.textContent = time;
+  if (time <= 0) {
+    quizEnd();
+  }
+}
+
+function saveHighscore() {
+  var initials = yourInitials.value.trim();
+  if (initials !== "") {
+    var highscores =
+      JSON.parse(window.localStorage.getItem("highscores")) || [];
+    var newScore = {
+      score: time,
+      initials: initials
+    };
+    highscores.push(newScore);
+    window.localStorage.setItem("highscores", JSON.stringify(highscores));
+    window.location.reload();
+  }
+}
+
+function checkForEnter(event) {
+  if (event.key === "Enter") {
+    saveHighscore();
+  }
+}
+
+
+function printHighscores() {
+  var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+  highscores.sort(function(a, b) {
+    return b.score - a.score;
+  });
+
+  highscores.forEach(function(score) {
+    var liTag = document.createElement("li");
+    liTag.textContent = score.initials + ":  " + score.score;
+    var olEl = document.getElementById("highscores");
+    olEl.appendChild(liTag);
+  });
+}
+
+function clearHighscores() {
+  window.localStorage.removeItem("highscores");
+  window.location.reload();
+}
+document.getElementById("clear").onclick = clearHighscores;
+
+printHighscores();
+
+
+submitButton.onclick = saveHighscore;
+startButton.onclick = startQuiz;
+yourInitials.onkeyup = checkForEnter;
+
+
+
+
+
+
 // 1. When on landing page, name and information of quiz appears with a button to start, view highscores, and timer set at 0. Create question variable array with nested arrays of title, choices, answer. Total of five questions with arrays. Create an onclick add eventListener with start button that begins quiz, starts timer in a function of startGame.
 
 // 2. When start button is depressed, name and information of quiz dissapears. Question with answers appear in button form ready for user to pick while the timer starts. Answering quickly with corect answer results in high score. Incorrect answer results in 15 second deducted from time remaing. Create a depressed startButton click event with a  function of showQuestions that hides the start button and quiz information, question and answers appear. Then timer starts counting down from 60 seconds.

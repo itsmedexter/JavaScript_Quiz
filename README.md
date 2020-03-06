@@ -1,4 +1,4 @@
-# Unit 4: Coding Quiz
+# JavaScript Quiz
 
 ![Redone](./Assets/coding_quiz.gif)
 

@@ -12,7 +12,7 @@ Whats strange, I saw some of the old code in this file. I wonder why I didn't fi
 
 ## Getting Started
 
-To get started with the Code Quiz, use any web browser to view live link, (https://itsmedexter.github.io/unit04_homework/). Repository link, (https://github.com/itsmedexter/unit04_homework).
+To get started with the Code Quiz, use any web browser to view live link, (https://itsmedexter.github.io/JavaScript_Quiz/). Repository link, (https://github.com/itsmedexter/JavaScript_Quiz).
 
 ## Technolgies Used
 
@@ -25,14 +25,14 @@ To get started with the Code Quiz, use any web browser to view live link, (https
 
 ## Deployed Link
 
-* [See Live Site](https://itsmedexter.github.io/unit04_homework/)
+* [See Live Site](https://itsmedexter.github.io/JavaScript_Quiz/)
 
 
 ## Authors
 
 Dexter Valencia 
 
-- [Link to Portfolio Site](https://github.com/itsmedexter/unit04_homework)
+- [Link to Portfolio Site](https://github.com/itsmedexter/JavaScript_Quiz)
 - [Link to Github](https://github.com/itsmedexter)
 - [Link to LinkedIn](https://www.linkedin.com/in/dextervalencia/)
 
